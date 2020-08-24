@@ -22,6 +22,17 @@
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 ;;----------------------------------------------------------------------------
+;; Setting font graphic mode
+;;----------------------------------------------------------------------------
+
+(when (display-graphic-p)
+  (set-face-attribute 'default nil
+                      :family "Source Code Pro"
+                      :height 110
+                      :weight 'Semibold
+                      :width 'normal))
+
+;;----------------------------------------------------------------------------
 ;; Adjust garbage collection thresholds during startup, and thereafter
 ;;----------------------------------------------------------------------------
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
@@ -102,11 +113,13 @@
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-purescript)
+(require 'init-r)
 (require 'init-ruby)
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-nim)
 (require 'init-rust)
+(require 'init-scala)
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
